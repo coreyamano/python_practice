@@ -7,11 +7,33 @@
 # Output: 10
 # Explanation: (1 + 2 + 3 + 4) = 10
 
+def reduce_sum(nums):
+    total_sum = 0
+    for num in nums:
+        total_sum += num
+    return total_sum
+
+
+nums_input = [4, 5, 6, 7]
+print(reduce_sum(nums_input))
+
+
 # SELECT LESS THAN 100
 # Description
-# Given an array of numbers, write a function that returns a new array that contains all numbers from tkinter.tix import MAX
+# Given an array of numbers, write a function that returns a new array that contains all numbers from the original array that are less than 100.
 # Input: [99, 101, 88, 4, 2000, 50]
 # Output: [99, 88, 4, 50]
+
+def less_than_100(numbers):
+    less_than_100_numbers = []
+    for num in numbers:
+        if num < 100:
+            less_than_100_numbers.append(num)
+    return less_than_100_numbers
+
+
+new_list = [99, 101, 88, 4, 2000, 50]
+print(less_than_100(new_list))
 
 
 # MAP: DOUBLE
@@ -19,10 +41,33 @@
 # Input: [4, 2, 5, 99, -4]
 # Output: [8, 4, 10, 198, -8]
 
+def double_nums(singles):
+    doubles = []
+    for num in singles:
+        doubles.append(num*2)
+    return doubles
+
+
+single_nums = [4, 2, 5, 99, -4]
+print(double_nums(single_nums))
+
 # ARRAY MAX
 # Write a function that returns the greatest value from an array of numbers.
 # Input: [5, 17, -4, 20, 12]
 # Output: 20
+
+
+def find_max(nums2):
+    max_num = float('-inf')
+    for num in nums2:
+        if num > max_num:
+            max_num = num
+    return max_num
+
+
+numbers2 = [5, 17, -4, 20, 12]
+print(find_max(numbers2))
+
 
 # REDUCE PRODUCT
 
