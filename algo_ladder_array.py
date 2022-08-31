@@ -76,11 +76,34 @@ print(find_max(numbers2))
 # Output: 24
 # Explanation: (1 x 2 x 3 x 4) = 24
 
+def reduce_product(nums2):
+    final = nums2[0]
+    for num in nums2:
+        final = final * num
+    return final
+
+
+multiply_nums = [1, 2, 3, 4]
+
+print(reduce_product(multiply_nums))
+
 # REVERSE ARRAY
 # Given an array, write a function that returns an array that contains the original array’s values in reverse.
 # Input: [1, 2, 3, 4, 5]
 # Output: [5, 4, 3, 2, 1]
 
+
+def reverse_array(reverse_nums):
+    i = -1
+    output_nums = []
+    while i >= len(reverse_nums) * -1:
+        output_nums.append(reverse_nums[i])
+        i -= 1
+    return output_nums
+
+
+input_nums = [1, 2, 3, 4, 5]
+print(reverse_array(input_nums))
 
 # SKIP IT
 # Given an array of numbers, write a function that returns a new array in which only select numbers from the original array are included, based on the following details:
@@ -89,3 +112,17 @@ print(find_max(numbers2))
 # [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
 # Output:
 # [2, 3, 1, 2, 2, 1, 5, 2, 2]
+
+
+def skip_nums(array):
+    i = 0
+    output_array = []
+    while i < len(array):
+        output_array.append(array[i])
+        i += array[i]
+    return output_array
+
+
+test_array = [2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]
+
+print(skip_nums(test_array))
