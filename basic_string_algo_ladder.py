@@ -3,6 +3,11 @@
 # Input: “abcde”
 # Output: “edcba”
 
+from cgi import test
+from operator import is_
+from re import I
+
+
 def reverse_string(word):
     reversed_word = ""
     i = -1
@@ -70,6 +75,20 @@ print(alternate_capitals(alt_cap_sent))
 # Given a string, write a function that returns the first occurence of two duplicate characters in a row, and return the duplicated character.
 # Input: “abcdefghhijkkloooop”
 # Output: “h”
+def find_first_dupe(input_sent):
+    output_letter = ""
+    let1 = 0
+    let2 = 1
+    while let2 < len(input_sent):
+        if input_sent[let1] == input_sent[let2]:
+            output_letter = input_sent[let1]
+            return output_letter
+        let1 += 1
+        let2 += 1
+
+
+test_dupe_sent = "abcdefghhijkkloooop"
+print(find_first_dupe(test_dupe_sent))
 
 # 5. Palindrome
 # Description
@@ -78,6 +97,24 @@ print(alternate_capitals(alt_cap_sent))
 # Output: true
 # Input: “baloney”
 # Output: false
+
+
+def is_palindrome(test_word):
+    i = -1
+    palindrome_test = ""
+    while i >= len(test_word) * -1:
+        palindrome_test += test_word[i]
+        i -= 1
+    if palindrome_test == test_word:
+        return True
+    else:
+        return False
+
+
+test_case1 = "racecar"
+test_case2 = "baloney"
+print(is_palindrome(test_case1))
+print(is_palindrome(test_case2))
 
 # 6. Hamming ->
 # Description
@@ -88,9 +125,45 @@ print(alternate_capitals(alt_cap_sent))
 # Input: "ABCDEFG", "ABCDEFG",
 # Output: 0
 
+
+def hamming(word1, word2):
+    i = 0
+    diff_letters = 0
+    while i < len(word1):
+        if word1[i] != word2[i]:
+            diff_letters += 1
+        i += 1
+    return diff_letters
+
+
+str1 = 'ABCDEFG'
+str2 = 'ABCXEOG'
+str3 = 'ABCDEFG'
+str4 = 'ABCDEFG'
+
+print(hamming(str1, str2))
+print(hamming(str3, str4))
+
 # 7. Reverse Words
 
 # Description
 # Given a string of words, write a function that returns a new string that contains the words in reverse order.
 # Input: “popcorn is so cool isn’t it yeah i thought so”
 # Output: “so thought i yeah it isn’t cool so is popcorn”
+
+
+def reverse_words(sentence):
+
+    words_in_reverse = []
+    words_in_reverse = sentence.split()
+
+    reverse_sentence = ""
+    i = -1
+    while i >= len(words_in_reverse) * -1:
+        reverse_sentence += words_in_reverse[i] + " "
+        i -= 1
+    return reverse_sentence
+
+
+test_reverse_sent = "popcorn is so cool isn’t it yeah i thought so"
+print(reverse_words(test_reverse_sent))
