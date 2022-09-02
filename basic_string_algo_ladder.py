@@ -3,6 +3,17 @@
 # Input: “abcde”
 # Output: “edcba”
 
+def reverse_string(word):
+    reversed_word = ""
+    i = -1
+    while i >= len(word) * -1:
+        reversed_word += word[i]
+        i -= 1
+    return reversed_word
+
+
+input_word = "abcde"
+print(reverse_string(input_word))
 
 # 2. Show Me The Money
 # Description
@@ -12,6 +23,20 @@
 # Input: “abcdefghijklmnopqrstuvwxyz”
 # Output: false
 
+
+def show_me_money(string):
+    if "$" in string:
+        return True
+    else:
+        return False
+
+
+money_string = "i hate $ but i love money i know i know im crazy"
+no_money_string = "abcdefghijklmnopqrstuvwxyz"
+
+print(show_me_money(money_string))
+print(show_me_money(no_money_string))
+
 # 3. Alternate Capitals
 
 # Description
@@ -19,7 +44,28 @@
 # Input: “hello, how are your porcupines today?”
 # Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
 
-# 4. First Duplicate CharacterData
+
+def alternate_capitals(sentence):
+    i = 0
+    alt_cap = ""
+    while i < len(sentence):
+        if i == 0:
+            alt_cap += sentence[i].lower()
+            i += 1
+        elif i % 2 == 0:
+            alt_cap += sentence[i].lower()
+            i += 1
+        elif i % 2 != 0:
+            alt_cap += sentence[i].upper()
+            i += 1
+    return alt_cap
+
+
+alt_cap_sent = "hello, how are your porcupines today?"
+print(alternate_capitals(alt_cap_sent))
+
+
+# 4. First Duplicate Character
 # Description
 # Given a string, write a function that returns the first occurence of two duplicate characters in a row, and return the duplicated character.
 # Input: “abcdefghhijkkloooop”
