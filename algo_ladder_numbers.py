@@ -54,6 +54,27 @@ fizzbuzz(4)
 # Input: 9
 # Output: 21 (as this is the 9th number of the Fibonacci Sequence)
 
+def find_fib_num(num):
+    step1 = 0
+    step2 = 1
+    final_result = 0
+    times = 2
+    if num == 0:
+        final_result = 0
+    elif num == 1 or num == 2:
+        final_result = 1
+    else:
+        while times < num:
+            final_result = step1 + step2
+            step1 = step2
+            step2 = final_result
+            times += 1
+    return final_result
+
+
+print(find_fib_num(9))
+
+
 # 4. Leap Year
 
 # Description
