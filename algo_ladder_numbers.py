@@ -7,6 +7,7 @@
 # If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
 
 from gettext import find
+from syslog import closelog
 
 
 def fizzbuzz(x):
@@ -124,6 +125,20 @@ print(find_sum_of_mult(1000))
 # 2
 # 1
 # Resulting in 9 steps. So for input n = 12, the return value would be 9.
+
+def collatz_conjecture(number):
+    steps = 0
+    while number != 1:
+        if number % 2 == 0:
+            number = number / 2
+            steps += 1
+        elif number % 2 == 1:
+            number = (number * 3) + 1
+            steps += 1
+    return steps
+
+print(collatz_conjecture(12))
+
 
 # 7. Largest Palindrome Product
 # Description
