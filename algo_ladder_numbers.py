@@ -7,6 +7,7 @@
 # If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
 
 from gettext import find
+from operator import is_
 from syslog import closelog
 
 
@@ -88,7 +89,23 @@ print(find_fib_num(9))
 # except every year that is evenly divisible by 100
 # unless the year is also evenly divisible by 400
 # For example, 1997 is not a leap year, but 1996 is . 1900 is not a leap year, but 2000 is .
-# If your language provides a method in the standard library that does this look-up, pretend it doesn't exist and implement it yourself.
+# If your language provides a method in the standard library that does this look-up, 
+# pretend it doesn't exist and implement it yourself.
+
+def find_leap_year(year):
+    is_leap_year = False
+    if year % 100 == 0 and year % 400 == 0:
+        is_leap_year = True
+    elif year % 100 == 0:
+        is_leap_year = False
+    elif year % 4 == 0:
+        is_leap_year = True
+    return is_leap_year
+
+print(find_leap_year(1900))
+print(find_leap_year(2000))
+print(find_leap_year(1996))
+print(find_leap_year(1997))
 
 # 5. Multiples of 3 and 5
 # Description
@@ -142,5 +159,20 @@ print(collatz_conjecture(12))
 
 # 7. Largest Palindrome Product
 # Description
-# A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+# A palindromic number reads the same both ways. The largest palindrome made from the product of two 
+# 2-digit numbers is 9009 = 91 × 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
+
+# def largest_palindrome(num1,num2):
+#     prod = ""
+#     backwards_split_prod = []
+#     largest_pal = 0
+#     for num1 in range(100,1000):
+#         for num2 in range(100,1000):
+#             prod = str(num1 * num2)
+#             split_prod = prod.split('')
+#             i = -1
+#             while i >= len(split_prod) * -1:
+#                 backwards_split_prod.append(split_prod[i])
+#                 i -= 1
+#             if 
