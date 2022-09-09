@@ -18,11 +18,25 @@ print(mesh_arrays(["a", "b", "c"], ["d", "e", "f", "g"]))
 # 2. Array Mesh II
 
 # Description
-# Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+# Given ONE array of strings, return a new array that contains every combination of each 
+# string with every other string in the array.
 
 # Input: ["a", "b", "c", "d"]
 # Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 
+def mesh_together(array):
+    i = 0
+    array2 = array
+    meshed_together = []
+    for n in array:
+        while i < len(array):
+            if n != array2[i]:
+                meshed_together.append(n + array2[i])
+            i += 1   
+        i = 0
+    return meshed_together 
+
+print(mesh_together(["a", "b", "c", "d"]))
 
 # 3. Largest product
 # Description
