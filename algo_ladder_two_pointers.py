@@ -6,6 +6,7 @@
 # Input: ["a", "b", "c"], ["d", "e", "f", "g"]
 # Output: ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"]
 
+
 def mesh_arrays(arr1,arr2):
     meshed = []
     for a in arr1:
@@ -61,7 +62,8 @@ print(highest_prod([5, -2, 1, -9, -7, 2, 6]))
 
 # 4. Two Sum I
 # Description
-# Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+# Given an array of numbers, return a new array containing just two numbers (from the original array) 
+# that add up to the number 10. If there are no two numbers that add up to 10, return false.
 
 # Specifically use nested loops to solve this exercise even though there are other approaches as well.
 
@@ -70,6 +72,25 @@ print(highest_prod([5, -2, 1, -9, -7, 2, 6]))
 
 # Input: [1, 2, 3, 4, 5]
 # Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+def two_sum(num_arr):
+    m = 0
+    result = []
+    for num in num_arr:
+        while m < len(num_arr):
+            if num != num_arr[m]:
+                if num + num_arr[m] == 10:
+                    result.append(num)
+                    result.append(num_arr[m])
+                    return result
+            m += 1
+        m = 0
+    if result == []:
+        return False
+
+print(two_sum([2, 5, 3, 1, 0, 7, 11]))
+print(two_sum([1, 2, 3, 4, 5]))
+
 
 # 5. Merge Sorted Arrays
 
