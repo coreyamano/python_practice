@@ -45,6 +45,20 @@ print(mesh_together(["a", "b", "c", "d"]))
 # Input: [5, -2, 1, -9, -7, 2, 6]
 # Output: 63 (-9 * -7)
 
+def highest_prod(num_arr):
+    z = 0
+    highest = num_arr[0] * num_arr[1]
+    for n in num_arr:
+        while z < len(num_arr):
+            if n != num_arr[z]:
+                if highest < n * num_arr[z]:
+                    highest = n * num_arr[z]
+            z += 1
+        z = 0
+    return highest
+
+print(highest_prod([5, -2, 1, -9, -7, 2, 6]))
+
 # 4. Two Sum I
 # Description
 # Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
