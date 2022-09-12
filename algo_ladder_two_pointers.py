@@ -95,10 +95,71 @@ print(two_sum([1, 2, 3, 4, 5]))
 # 5. Merge Sorted Arrays
 
 # Description
-# Given two sorted arrays, merge the second array into the first array while ensuring that the first array remains sorted. Do not use any built-in sort methods.
+# Given two sorted arrays, merge the second array into the first array while ensuring that the first array 
+# remains sorted. Do not use any built-in sort methods.
 
 # Input :
 # A : [1, 5, 8]
 # B : [6, 9]
 
 # Modified A : [1, 5, 6, 8, 9]
+
+def merge_sorted(arrA,arrB):
+    merged = []
+    sorted_merged = []
+    temp = 0
+
+    #merge arrA and arrB
+    merged = arrA + arrB
+
+    for n in range (0, len(merged)):
+        for m in range(n+1, len(merged)):
+            if (merged[n] > merged[m]):
+                temp = merged[n]
+                merged[n] = merged[m]
+                merged[m] = temp
+    return merged
+
+print(merge_sorted([1, 5, 8],[6, 9]))
+
+
+
+# 6. 100 Coolio Array
+
+
+# Description
+# Given an array of numbers, return true if the array is a "100 Coolio Array", or false if it is not.
+
+# A "100 Coolio Array" meets the following criteria:
+
+# Its first and last numbers add up to 100,
+# Its second and second-to-last numbers add up to 100,
+# Its third and third-to-last numbers add up to 100,
+# and so on and so forth.
+
+# Here are examples of 100 Coolio Arrays:
+
+# [1, 2, 3, 97, 98, 99]
+# [90, 20, 70, 100, 30, 80, 10]
+
+
+# 7. Longest Common prefix
+
+# Description
+# Write a function to find the longest common prefix string amongst an array of strings.
+
+# If there is no common prefix, return an empty string "".
+
+# Example 1:
+
+# Input: ["flower","flow","flight"]
+# Output: "fl"
+# Example 2:
+
+# Input: ["dog","racecar","car"]
+# Output: ""
+# Explanation: There is no common prefix among the input strings.
+# Note:
+
+# All given inputs are in lowercase letters a-z.
+
