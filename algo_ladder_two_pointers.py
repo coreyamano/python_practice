@@ -142,6 +142,21 @@ print(merge_sorted([1, 5, 8],[6, 9]))
 # [1, 2, 3, 97, 98, 99]
 # [90, 20, 70, 100, 30, 80, 10]
 
+def a_100_coolio_array(arr):
+    f = 0
+    l = -1
+    while f < len(arr)/2:
+        if arr[f] == arr[l] and arr[f] == 100:
+            return True
+        elif arr[f] + arr[l] != 100:
+            return False
+        f += 1
+        l -= 1
+    return True
+
+print(a_100_coolio_array([1, 2, 3, 97, 98, 99]))
+print(a_100_coolio_array([90, 20, 70, 100, 30, 80, 10]))
+
 
 # 7. Longest Common prefix
 
