@@ -5,6 +5,14 @@
 # Input: “peter piper picked a peck of pickled peppers”
 # Output: “p”
 
+def frequent_letter(string):
+    letter_dict = {}
+    for n in string:
+        letter_dict[n] = letter_dict.get(n,0) + 1
+    return max(letter_dict, key=letter_dict.get)
+
+print(frequent_letter('peter piper picked a peck of pickled peppers'))
+
 # 2. Count Votes
 # Description
 # Given an array of strings, return a hash that provides of a count of how many times each string occurs.
