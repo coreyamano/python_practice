@@ -23,6 +23,14 @@ print(frequent_letter('peter piper picked a peck of pickled peppers'))
 
 # Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
 
+def count_votes(array):
+    counted_votes = {}
+    for n in array:
+        counted_votes[n] = counted_votes.get(n,0) + 1
+    return counted_votes
+
+print(count_votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]))
+
 # 3. Order the Whole Menu
 
 # Description
