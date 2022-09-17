@@ -109,6 +109,21 @@ print(top_liked([
 # Input: 'ACGTGGTCTTAA'
 # Output: 'UGCACCAGAAUU'
 
+def give_rna(dna_string):
+    rna_string = ""
+    for n in dna_string:
+        if n == 'G':
+            rna_string += 'C'
+        elif n == 'C':
+            rna_string += 'G'
+        elif n == 'T':
+            rna_string += 'A'
+        elif n == 'A':
+            rna_string += 'U'
+    return rna_string
+
+print(give_rna('ACGTGGTCTTAA'))
+
 # 6. Complete the Data I
 # Description
 # Given an array of social media posts and a hash of users, return a list of posts (as an array of hashes) 
