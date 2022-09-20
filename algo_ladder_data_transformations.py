@@ -2,7 +2,8 @@
 
 
 # Description
-# You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
+# You are given two parameters, an array and a number. Return a hash whose keys are each of the values from 
+# the array parameter, and whose values are the number parameter.
 
 # Input:
 
@@ -18,6 +19,14 @@
 # 'o' => 1,
 # 'u' => 1
 # }
+
+def etl_1(arr, num):
+    etl_dict = {}
+    for n in arr:
+        etl_dict[n] = num
+    return etl_dict
+
+print(etl_1(["a", "e", "i", "o", "u"],1))
 
 # 2. Flatten Hash
 
