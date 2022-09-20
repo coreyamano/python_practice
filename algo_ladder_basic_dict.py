@@ -5,6 +5,9 @@
 # Input: “peter piper picked a peck of pickled peppers”
 # Output: “p”
 
+from operator import is_
+
+
 def frequent_letter(string):
     letter_dict = {}
     for n in string:
@@ -182,3 +185,20 @@ print(list_by_id(
 
 # Input: “frog”, “bear”
 # Output: false
+
+def is_an_anagram(string1, string2):
+    dict1 = {}
+    dict2 = {}
+    for n in string1:
+        dict1[n] = dict1.get(n,0) + 1
+
+    for m in string2:
+        dict2[m] = dict2.get(m,0) + 1
+
+    if dict1 == dict2:
+        return True
+    else:
+        return False
+
+print(is_an_anagram('silent','listen'))
+print(is_an_anagram('frog','bear'))
