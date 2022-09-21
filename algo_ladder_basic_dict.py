@@ -5,8 +5,6 @@
 # Input: “peter piper picked a peck of pickled peppers”
 # Output: “p”
 
-from operator import is_
-
 
 def frequent_letter(string):
     letter_dict = {}

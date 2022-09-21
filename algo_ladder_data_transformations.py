@@ -36,6 +36,14 @@ print(etl_1(["a", "e", "i", "o", "u"],1))
 # Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
 # Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
 
+def flatten_hash(dict):
+    arr = []
+    for n in dict:
+        arr.append(n)
+        arr.append(dict[n])
+    return arr
+
+print(flatten_hash({'a':1,'b':2,'c':3,'d':4}))
 
 
 # 3. Flip Hash
