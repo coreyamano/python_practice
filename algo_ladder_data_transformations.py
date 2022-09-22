@@ -54,10 +54,19 @@ print(flatten_hash({'a':1,'b':2,'c':3,'d':4}))
 # Input: {"a" => 1, "b" => 2, "c" => 3}
 # Output: {1 => "a", 2 => "b", 3 => "c"}
 
+def flip_hash(dict2):
+    flipped_dict2 = {}
+    for n in dict2:
+        flipped_dict2[dict2[n]] = n
+    return flipped_dict2
+
+print(flip_hash({"a" : 1, "b" : 2, "c" : 3}))
+
 # 4. ETL #2
 
 # Description
-# You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
+# You are given a hash in format #A, and you are to return the same data as a hash using format #B, 
+# as specified below:
 
 # Input:
 
