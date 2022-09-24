@@ -1,6 +1,8 @@
 # 1. Array Intersection
 
-# Given two arrays, return a new array that contains the intersection of the two arrays. The intersection means the values that are contained in both of the arrays. Do not use the "&", or any built-in intersection methods.
+# Given two arrays, return a new array that contains the intersection of the two arrays. The intersection 
+# means the values that are contained in both of the arrays. Do not use the "&", or any built-in intersection 
+# methods.
 
 # NOTE: You must accomplish this in O(n) time. This is also known as linear time.
 
@@ -10,7 +12,8 @@
 
 # 2. Array Subset
 # Description
-# Given two arrays, determine whether one is a subset of the other. It is considered a subset if all the values in one array are contained within the other.
+# Given two arrays, determine whether one is a subset of the other. It is considered a subset if all 
+# the values in one array are contained within the other.
 
 # NOTE: You must accomplish this in O(n) time. This is also known as linear time.
 
@@ -40,7 +43,8 @@
 
 # 5. First Unique Character
 # Description
-# Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, return -1.
+# Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, 
+# return -1.
 
 # NOTE: You must accomplish this in O(n) time. This is also known as linear time.
 
@@ -60,7 +64,8 @@
 # Description
 # This is the same exercise as Two Sum I, but you must now solve it in linear time.
 
-# Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+# Given an array of numbers, return a new array containing just two numbers (from the original array) 
+# that add up to the number 10. If there are no two numbers that add up to 10, return false.
 
 # Input: [2, 5, 3, 1, 0, 7, 11]
 # Output: [3, 7]
@@ -91,7 +96,8 @@
 # {id: 4, first_name: 'Teena', last_name: 'Burgess'},
 # ]
 
-# Return a new array of videos in the following format, and only include videos that have at least 100 views:
+# Return a new array of videos in the following format, and only include videos that have at least 
+# 100 views:
 
 # [
 # {title: 'How to Seem Perfect', views: 111, author_name: 'Teena Burgess' }

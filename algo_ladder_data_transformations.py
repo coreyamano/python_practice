@@ -142,6 +142,19 @@ print(flip_hash({"a" : 1, "b" : 2, "c" : 3}))
 # 'z' => 10
 # }
 
+def etl_ver2(hash_arr):
+    map_hash_arr = {}
+    for n in hash_arr:
+        for m in hash_arr[n]:
+            w = m.lower()
+            map_hash_arr[w]= n
+    return map_hash_arr
+
+print(etl_ver2({
+1 : ["A", "E"],
+2 : ["D", "G"]
+}))
+
 # 5. Complete the Data II
 # Description
 # Given an array of social media posts and an array of users, return a list of posts (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
