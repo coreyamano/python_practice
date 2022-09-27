@@ -243,24 +243,30 @@ print(complete_data2(
 # ]
 # }
 
-def book_organizer(books):
-    by_authors = {}
-    #books_written = []
-    for n in books:
-        print(n['author'])
-        by_authors[n['author']] = n['title']
-    return by_authors
+# def book_organizer(books):
+#     by_authors = {}
+#     book_list = []
+#     books_written = {}
+#     i = 0
+#     for n in books:
+#         print(n['author'])
+#         while i < len(books):
+#             if n['author'] == books[i]['author']:
+#                 books_written[n] = books[n]['title','year']
+#             i += 1
+#             by_authors[n['author']] = books_written
+#     return by_authors
     
 
-print(book_organizer( [
-{'title': "The Lord of the Rings", 'author': "J. R. R. Tolkien", 'year': 1954 },
-{'title': "To Kill a Mockingbird", 'author': "Harper Lee", 'year': 1960 },
-{'title': "1984", 'author': "George Orwell", 'year': 1949 },
-{'title': "Go Set a Watchman", 'author': "Harper Lee", 'year': 2015 },
-{'title': "The Hobbit", 'author': "J. R. R. Tolkien", 'year': 1937 },
-{'title': "The Great Gatsby", 'author': "F. Scott Fitzgerald", 'year': 1925 },
-{'title': "The Two Towers", 'author': "J. R. R. Tolkien", 'year': 1954 }
-]))
+# print(book_organizer( [
+# {'title': "The Lord of the Rings", 'author': "J. R. R. Tolkien", 'year': 1954 },
+# {'title': "To Kill a Mockingbird", 'author': "Harper Lee", 'year': 1960 },
+# {'title': "1984", 'author': "George Orwell", 'year': 1949 },
+# {'title': "Go Set a Watchman", 'author': "Harper Lee", 'year': 2015 },
+# {'title': "The Hobbit", 'author': "J. R. R. Tolkien", 'year': 1937 },
+# {'title': "The Great Gatsby", 'author': "F. Scott Fitzgerald", 'year': 1925 },
+# {'title': "The Two Towers", 'author': "J. R. R. Tolkien", 'year': 1954 }
+# ]))
 
 # 7. ETL #3
 
@@ -289,3 +295,30 @@ print(book_organizer( [
 # {title: 'How to Seem Perfect', views: 111, author_name: 'Teena Burgess' }
 # {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
 # ]
+
+def etl3(vids,authors):
+    vids_100 = []
+    author_name = ''
+    for n in vids:
+        for m in authors:
+            if n['author_id'] == m['id']:
+                n['author_name'] = m['first_name'] + ' ' + m['last_name']
+    for n in vids:
+        if n['views'] >= 100:
+            vids_100. append(n)
+    return vids_100
+
+print(etl3(
+    [
+{'title': 'How to Make Wood', 'author_id': 4, 'views': 6},
+{'title': 'How to Seem Perfect', 'author_id': 4, 'views': 111},
+{'title': 'Review of the New "Unbreakable Mug"', 'author_id': 2, 'views': 202},
+{'title': 'Why Pigs Stink', 'author_id': 1, 'views': 12}
+], 
+[
+{'id': 1, 'first_name': 'Jazz', 'last_name': 'Callahan'},
+{'id': 2, 'first_name': 'Ichabod', 'last_name': 'Loadbearer'},
+{'id': 3, 'first_name': 'Saron', 'last_name': 'Kim'},
+{'id': 4, 'first_name': 'Teena', 'last_name': 'Burgess'},
+]
+))
