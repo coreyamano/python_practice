@@ -298,14 +298,15 @@ print(complete_data2(
 
 def etl3(vids,authors):
     vids_100 = []
-    author_name = ''
+    list_vids = {}
     for n in vids:
         for m in authors:
             if n['author_id'] == m['id']:
                 n['author_name'] = m['first_name'] + ' ' + m['last_name']
     for n in vids:
         if n['views'] >= 100:
-            vids_100. append(n)
+            list_vids = {'title':n['title'],'views':n['views'],'author_name':n['author_name']}
+            vids_100.append(list_vids)
     return vids_100
 
 print(etl3(
