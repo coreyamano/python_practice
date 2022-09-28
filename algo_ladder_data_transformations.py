@@ -243,30 +243,31 @@ print(complete_data2(
 # ]
 # }
 
-# def book_organizer(books):
-#     by_authors = {}
-#     book_list = []
-#     books_written = {}
-#     i = 0
-#     for n in books:
-#         print(n['author'])
-#         while i < len(books):
-#             if n['author'] == books[i]['author']:
-#                 books_written[n] = books[n]['title','year']
-#             i += 1
-#             by_authors[n['author']] = books_written
-#     return by_authors
+def book_organizer(books):
+    by_authors = {}
+    author_list = {}
+    books_written = []
+
+    for n in books:
+        author_list['author'] = n['author']
+
+
+    for m in books:
+        if m['author'] == author_list['author']:
+            books_written.append({'title':m['title'],'year':m['year']})
+            by_authors[m['author']] = books_written
+    return by_authors
     
 
-# print(book_organizer( [
-# {'title': "The Lord of the Rings", 'author': "J. R. R. Tolkien", 'year': 1954 },
-# {'title': "To Kill a Mockingbird", 'author': "Harper Lee", 'year': 1960 },
-# {'title': "1984", 'author': "George Orwell", 'year': 1949 },
-# {'title': "Go Set a Watchman", 'author': "Harper Lee", 'year': 2015 },
-# {'title': "The Hobbit", 'author': "J. R. R. Tolkien", 'year': 1937 },
-# {'title': "The Great Gatsby", 'author': "F. Scott Fitzgerald", 'year': 1925 },
-# {'title': "The Two Towers", 'author': "J. R. R. Tolkien", 'year': 1954 }
-# ]))
+print(book_organizer( [
+{'title': "The Lord of the Rings", 'author': "J. R. R. Tolkien", 'year': 1954 },
+{'title': "To Kill a Mockingbird", 'author': "Harper Lee", 'year': 1960 },
+{'title': "1984", 'author': "George Orwell", 'year': 1949 },
+{'title': "Go Set a Watchman", 'author': "Harper Lee", 'year': 2015 },
+{'title': "The Hobbit", 'author': "J. R. R. Tolkien", 'year': 1937 },
+{'title': "The Great Gatsby", 'author': "F. Scott Fitzgerald", 'year': 1925 },
+{'title': "The Two Towers", 'author': "J. R. R. Tolkien", 'year': 1954 }
+]))
 
 # 7. ETL #3
 
