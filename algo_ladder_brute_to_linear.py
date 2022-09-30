@@ -10,6 +10,9 @@
 # Output: [1, 3, 5]
 
 
+from operator import truediv
+
+
 def array_intersect(arr1,arr2):
     inter = []
     for n in arr1:
@@ -32,6 +35,27 @@ print(array_intersect([1, 2, 3, 4, 5], [1, 3, 5, 7, 9]))
 
 # Input: [1, 2, 3, 4, 5, 6], [6, 3, 7]
 # Output: false
+
+def arr_subset(arr1,arr2):
+    match = []
+    if len(arr1) <= len(arr2):
+        for n in arr1:
+            for m in arr2:
+                if n == m:
+                    match.append(n)
+    elif len(arr2) < len(arr1):
+        for n in arr2:
+            for m in arr1:
+                if n == m:
+                    match.append(n)
+    if match == arr1 or match == arr2:
+        return True
+    else:
+        return False
+
+print(arr_subset([1, 2, 3, 4, 5, 6], [6, 3, 2]))
+print(arr_subset([1, 2, 3, 4, 5, 6], [6, 3, 7]))
+
 
 # 3. Array Duplicate
 # Description
