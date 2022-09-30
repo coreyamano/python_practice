@@ -10,6 +10,16 @@
 # Output: [1, 3, 5]
 
 
+def array_intersect(arr1,arr2):
+    inter = []
+    for n in arr1:
+        for m in arr2:
+            if n == m:
+                inter.append(n)
+    return inter
+
+print(array_intersect([1, 2, 3, 4, 5], [1, 3, 5, 7, 9]))
+
 # 2. Array Subset
 # Description
 # Given two arrays, determine whether one is a subset of the other. It is considered a subset if all 

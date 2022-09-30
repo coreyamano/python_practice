@@ -249,13 +249,13 @@ def book_organizer(books):
     books_written = []
 
     for n in books:
-        author_list['author'] = n['author']
+        author_list = {n['author']:[]}
+        print(author_list)
 
 
-    for m in books:
-        if m['author'] == author_list['author']:
-            books_written.append({'title':m['title'],'year':m['year']})
-            by_authors[m['author']] = books_written
+    for n in author_list:
+        books_written.append({'title':n['title'],'year':n['year']})
+        by_authors[n] = books_written
     return by_authors
     
 
