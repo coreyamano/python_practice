@@ -66,6 +66,17 @@ print(arr_subset([1, 2, 3, 4, 5, 6], [6, 3, 7]))
 # Input: [5, 2, 9, 7, 2, 6]
 # Output: 2
 
+def find_dupe(arr):
+    dupe = 0
+    i = 1
+    while i < len(arr):
+        for n in arr:
+            if arr[i] == n:
+                return n
+        i += 1
+    
+print(find_dupe([5, 2, 9, 7, 2, 6]))
+
 # 4. Missing Letter
 # Description
 # A given string contains all the letters from the alphabet except for one. Return the missing letter.
