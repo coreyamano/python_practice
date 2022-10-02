@@ -86,6 +86,16 @@ print(find_dupe([5, 2, 9, 7, 2, 6]))
 # Input: “The quick brown box jumps over a lazy dog”
 # Output: “f”
 
+def missing_letter(str):
+    alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    for letter in str.lower():
+        if letter in alpha:
+            alpha.remove(letter)
+    return alpha
+
+print(missing_letter('The quick brown box jumps over a lazy dog'))
+
+
 # 5. First Unique Character
 # Description
 # Given a string, find the first non-repeating character in it and return its index. If it doesn't exist, 
