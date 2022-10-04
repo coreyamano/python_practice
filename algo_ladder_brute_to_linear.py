@@ -115,6 +115,12 @@ print(missing_letter('The quick brown box jumps over a lazy dog'))
 
 # Note: You may assume the string contain only lowercase letters.
 
+# def first_unique(str):
+#     unique = 0
+#     i = 0
+#     for letter in str:
+
+
 # 6. Two Sum II
 # Description
 # This is the same exercise as Two Sum I, but you must now solve it in linear time.
@@ -127,6 +133,21 @@ print(missing_letter('The quick brown box jumps over a lazy dog'))
 
 # Input: [1, 2, 3, 4, 5]
 # Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+def two_sum2(num_arr):
+    m = 0
+    result = []
+    for num in num_arr:
+        while m < len(num_arr):
+            if num != num_arr[m]:
+                if num + num_arr[m] == 10:
+                    result.append(num)
+                    result.append(num_arr[m])
+                    return result
+            m += 1
+        m = 0
+    if result == []:
+        return False
 
 # 7. ETL #4
 
