@@ -180,3 +180,16 @@ def two_sum2(num_arr):
 # {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
 # ]
 
+def etl4(vids,authors):
+    vids_100 = []
+    list_vids = {}
+    for n in vids:
+        for m in authors:
+            if n['author_id'] == m['id']:
+                n['author_name'] = m['first_name'] + ' ' + m['last_name']
+    for n in vids:
+        if n['views'] >= 100:
+            list_vids = {'title':n['title'],'views':n['views'],'author_name':n['author_name']}
+            vids_100.append(list_vids)
+    return vids_100
+
