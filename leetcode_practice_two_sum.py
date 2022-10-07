@@ -12,12 +12,15 @@ def two_sum(nums,targ):
     t = 1
     while i <= len(nums)-1:
         while t < len(nums):
-            if nums[i] + nums[t] == targ:
-                output.append(i)
-                output.append(t)
-                return output
+            if i != t:
+                if nums[i] + nums[t] == target:
+                    output.append(i)
+                    output.append(t)
+                    return output
+                else:
+                    t += 1
             else:
-                t += 1
+                t += 1        
         t = i + 1
         i +=1    
 
