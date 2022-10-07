@@ -10,22 +10,21 @@ def two_sum(nums,targ):
     output = []
     i = 0
     t = 1
-    while i < len(nums):
-        t = 0
-        while t <= len(nums)-1:
-            if nums[i] != nums[t]: 
-                if nums[i] + nums[t] == targ:
-                    output.append(i)
-                    output.append(t)
+    while i <= len(nums)-1:
+        while t < len(nums):
+            if nums[i] + nums[t] == targ:
+                output.append(i)
+                output.append(t)
                 return output
             else:
                 t += 1
-            
-    i += 1
+        t = i + 1
+        i +=1    
 
 
-print(two_sum([2,7,11,15],9))
+print(two_sum([11,15,2,7],9))
 print(two_sum([3,2,4],6))
+print(two_sum([3,3],6))
 
 # Example 1:
 
