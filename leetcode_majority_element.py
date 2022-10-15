@@ -1,5 +1,4 @@
 def majority(arr):
-    max = 0
     count = {}
     for n in arr:
         count[n] = count.get(n,0) + 1
