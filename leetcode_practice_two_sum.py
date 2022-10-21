@@ -13,7 +13,7 @@ def two_sum(nums,targ):
     while i <= len(nums)-1:
         while t < len(nums):
             if i != t:
-                if nums[i] + nums[t] == target:
+                if nums[i] + nums[t] == targ:
                     output.append(i)
                     output.append(t)
                     return output
